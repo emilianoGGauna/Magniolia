@@ -1,0 +1,195 @@
+.table-container {
+    max-width: 1000px;
+    max-height: 500px;
+    overflow: scroll;
+    margin: auto;
+    display: none; /* Inicialmente oculto */
+}
+
+
+.sticky {
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 100;
+}
+
+.sticky th {
+    position: sticky;
+    top: 0;
+}
+
+.sticky-input {
+    position: sticky;
+    top: 52px; /* Altura de la fila de nombres de columnas */
+    z-index: 100;
+    background-color: white;
+}
+.botones-contenedor {
+    display: flex;
+    align-items: center;
+    gap: 40px; /* Espaciado entre botones */
+}
+
+.btn-custom {
+    padding: 10px 20px; /* Aumenta la altura y ajusta el ancho */
+    /* Puedes ajustar el padding según tus necesidades */
+}
+
+
+
+
+/* Estilos para la barra fija en la parte superior */
+.fixed-top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+.fixed-top-bar .logo img {
+    height: 50px;
+    margin-right: 10px;
+}
+
+.fixed-top-bar .logo, .fixed-top-bar .nav-buttons {
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+}
+
+/* Estilos para el texto "Magnolia" */
+.fixed-top-bar .logo .text-magnolia {
+    color: #fff;
+}
+
+.fixed-top-bar .nav-buttons {
+    display: flex;
+    justify-content: center;
+    margin-right: 20px;
+    flex-grow: 1; /* Asegura que los botones se centren correctamente */
+}
+
+.fixed-top-bar .nav-button {
+    font-size: 17px;
+    margin-left: 10px; /* Espaciado uniforme a la izquierda */
+    margin-right: 20px; /* 10px existentes más 10px adicionales */
+    padding: 5px 10px; /* Reducido para hacer botones más pequeños */
+    background-color: #555; /* Mantiene el color de fondo */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    flex: 1; /* Ajuste para no expandir demasiado los botones */
+    text-align: center;
+
+}
+
+.fixed-top-bar .nav-button:hover,
+.fixed-top-bar .nav-button:focus {
+    background-color: #4CAF50; /* Cambia el color de fondo en hover y en foco (seleccionado) */
+}
+
+/* Ajuste del padding del body para evitar superposición con la barra superior fija */
+body {
+    padding-top: 60px; /* Ajusta según sea necesario según la altura de tu barra superior */
+}
+
+
+.hamburger-menu {
+    display: block;
+    cursor: pointer;
+    font-size: 24px;
+    color: #fff;
+    padding: 10px 50px;
+    position: absolute;
+    right: 50px;
+    top: 10px;
+}
+
+.nav-buttons {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 20px;
+    padding-left: 600px; /* Margen izquierdo */
+    padding-right: 50px; /* Margen derecho */
+}
+
+.nav-buttons a {
+    display: block;
+    color: #fff;
+    padding: 20px;
+    text-decoration: none;
+    border-bottom: 1px solid #444;
+    text-align: center;
+}
+.fixed-top-bar .logo .text-magnolia, .fixed-top-bar .logo span {
+    color: #fff;
+}
+
+.table-container, .toggle {
+    max-width: 1300px; /* Adjust this value as needed */
+    margin: auto; /* Centers the element */
+}
+
+
+.toggle {
+    cursor: pointer;
+    border: 1px solid #000000;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #f4f4f4;
+    transition: all 0.3s ease;
+}
+
+.toggle:hover {
+    background-color: #e9ecef;
+    transform: scale(1.02);
+}
+
+.arrow {
+    float: right;
+    transition: transform 0.3s ease;
+}
+
+.collapsible {
+    display: none;
+    padding: 10px;
+    border: 1px solid #000000;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.collapsible.show {
+    display: block;
+}
+
+.collapsible.show + .toggle .arrow {
+    transform: rotate(180deg);
+}
+
+/* Estilo para centrar las gráficas */
+.grafica {
+    display: flex;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente, si es necesario */
+}
+
+.descripcion-grafica p {
+    font-size: 0.8em;
+    margin-left: 100px; /* Margen izquierdo */
+    margin-right: 100px; /* Margen derecho */
+}
+

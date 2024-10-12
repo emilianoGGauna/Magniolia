@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style2.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body data-chat-url="{{ url_for('chat') }}">
+
+    <div class="container">
+        <div class="user-info">
+            <h1>Welcome to Your Dashboard</h1>
+            <p><strong>Name:</strong> {{ user_info['first_name'] }} {{ user_info['last_name'] }}</p>
+            <p><strong>Email:</strong> {{ user_info['email'] }}</p>
+            <p><strong>Database:</strong> {{ user_info['db_name'] }}</p>
+        </div>
+        <div class="center-button">
+            <a href="{{ url_for('logout') }}" class="button">Logout</a>
+            <!-- Botón para ir a la página de Graficas GPT -->
+            <a href="{{ url_for('graficas_gpt') }}" class="button">Graficas GPT</a>
+        </div>
+    </div>
+
+    <!-- Botón y Contenedor de Chat -->
+    <button id="open-chat" class="chat-toggle">Chat</button>
+    <div id="chat-container" class="chat-container">
+        <button id="close-chat" class="close-chat">X</button>
+        
+        <a href="{{ url_for('usage_chat') }}" class="button usage-chat">How to Use</a>
+
+        <div id="chat-messages" class="chat-messages">
+            <!-- Mensajes del chat serán insertados aquí -->
+        </div>
+        <div class="message-input">
+            <input type="text" id="user-input" class="form-control" placeholder="Type your message..." required>
+            <button onclick="sendMessage()" class="btn btn-primary send-btn">Send</button>
+        </div>
+    </div>
+
+    <!-- Static Top Bar -->
+    <div class="fixed-top-bar">
+        <div class="logo">
+                <img src="/static/images/logo.jpeg" alt="Logo de Magnolia">
+                <span>Magnolia</span>
+        </div>
+    
+        <div class="hamburger-menu">&#9776;</div>
+    
+        <div class="nav-buttons">
+            <a href="{{ url_for('home') }}" class="nav-button">Perfil</a>
+            {% for seccion in nombres_secciones %}
+                {% set nombre_boton = secciones_dic[seccion]['Tablas']|join('&') %}
+                <a href="{{ url_for('organo', seccion=seccion) }}" class="nav-button">{{ nombre_boton }}</a>
+            {% endfor %}
+        </div>
+        
+        
+    </div>
+
+    <script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/nav_button.js') }}"></script>
+</body>
+</html>
+
+
+
+

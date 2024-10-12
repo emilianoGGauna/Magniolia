@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Graficas GPT</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style5.css') }}">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Graficas GPT</h1>
+        
+        <form action="{{ url_for('graficas_gpt') }}" method="post">
+            <input type="text" name="user_input" placeholder="Ingrese el tipo de gráfico">
+            <input type="submit" value="Generar Gráfico">
+        </form>
+
+        <div id="graph-output">
+            <!-- Display the graph HTML if it's not None -->
+            {% if graph_html %}
+                <div class="graph-container">
+                    {{ graph_html | safe }}
+                </div>
+            {% endif %}
+            <p>{{ description }}</p>
+        </div>
+
+
+        <div class="center-button">
+            <a href="{{ url_for('home') }}" class="button">Volver al Inicio</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,261 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+.container {
+    text-align: center;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: fit-content;
+    margin: 100px auto 0; /* 100px top margin, auto horizontal */
+}
+
+h1, p, h2, h3, ul {
+    margin-bottom: 20px;
+}
+
+/* Position the Back to Dashboard button at the bottom right */
+.back-dashboard {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.back-dashboard:hover {
+    background-color: #0056b3;
+}
+.table-name {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.arrow {
+    margin-right: 5px;
+    user-select: none; /* prevent text selection */
+}
+
+.columns-list {
+    text-align: left;
+    padding-left: 20px; /* Indent the list for better readability */
+}
+
+
+
+
+
+
+.chat-toggle {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    z-index: 1000;
+}
+
+.chat-toggle:hover {
+    background-color: #0056b3;
+}
+
+.chat-container {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    width: 300px;
+    height: 300px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.close-chat {
+    color: red;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 18px;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}
+
+.close-chat:hover {
+    background-color: #ffc6c6; /* Light red background for hover */
+}
+
+.usage-chat {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.usage-chat:hover {
+    background-color: #0056b3;
+}
+
+.chat-messages {
+    overflow-y: auto;
+    margin-top: 30px;
+    flex-grow: 1;
+}
+
+.message-input {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.message-input .form-control {
+    flex-grow: 1;
+    margin-right: 10px;
+}
+
+.send-btn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.send-btn:hover {
+    background-color: #218838;
+}
+
+
+
+
+
+
+/* FIXED TOP BAR
+/* Estilos para la barra fija en la parte superior */
+.fixed-top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+.fixed-top-bar .logo img {
+    height: 50px;
+    margin-right: 10px;
+}
+
+.fixed-top-bar .logo, .fixed-top-bar .nav-buttons {
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+}
+
+/* Estilos para el texto "Magnolia" */
+.fixed-top-bar .logo .text-magnolia {
+    color: #fff;
+}
+
+.fixed-top-bar .nav-buttons {
+    display: flex;
+    justify-content: center;
+    margin-right: 20px;
+    flex-grow: 1; /* Asegura que los botones se centren correctamente */
+}
+
+.fixed-top-bar .nav-button {
+    font-size: 17px;
+    margin-left: 10px; /* Espaciado uniforme a la izquierda */
+    margin-right: 20px; /* 10px existentes más 10px adicionales */
+    padding: 5px 10px; /* Reducido para hacer botones más pequeños */
+    background-color: #555; /* Mantiene el color de fondo */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    flex: 1; /* Ajuste para no expandir demasiado los botones */
+    text-align: center;
+
+}
+
+.fixed-top-bar .nav-button:hover,
+.fixed-top-bar .nav-button:focus {
+    background-color: #4CAF50; /* Cambia el color de fondo en hover y en foco (seleccionado) */
+}
+
+/* Ajuste del padding del body para evitar superposición con la barra superior fija */
+body {
+    padding-top: 60px; /* Ajusta según sea necesario según la altura de tu barra superior */
+}
+
+
+.hamburger-menu {
+    display: block;
+    cursor: pointer;
+    font-size: 24px;
+    color: #fff;
+    padding: 10px 50px;
+    position: absolute;
+    right: 50px;
+    top: 10px;
+}
+
+.nav-buttons {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 20px;
+    padding-left: 600px; /* Margen izquierdo */
+    padding-right: 50px; /* Margen derecho */
+}
+
+.nav-buttons a {
+    display: block;
+    color: #fff;
+    padding: 20px;
+    text-decoration: none;
+    border-bottom: 1px solid #444;
+    text-align: center;
+}
+.fixed-top-bar .logo .text-magnolia, .fixed-top-bar .logo span {
+    color: #fff;
+}
